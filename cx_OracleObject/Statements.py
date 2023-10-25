@@ -65,6 +65,7 @@ INDEXES = INDEXES_ANY + """
           ( select 1
             from %(p_ViewPrefix)s_constraints
             where owner = o.owner
+              and table_name = o.table_name
               and constraint_name = o.index_name
           )
         order by o.owner, o.index_name"""
